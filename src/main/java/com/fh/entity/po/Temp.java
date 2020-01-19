@@ -3,6 +3,7 @@ package com.fh.entity.po;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -13,6 +14,7 @@ public class Temp {
     private String name;
     private Integer jobId;
     private double salary;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date entryTime;
     private Integer deptId;
 

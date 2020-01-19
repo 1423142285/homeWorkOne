@@ -4,5 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
 <mapper namespace="com.fh.dao.TempDao">
-
+    <select id="queryCount" resultType="long">
+        select count(*) from t_emp
+    </select>
+    <select id="queryTempList" resultType="com.fh.entity.vo.TempSer">
+        SELECT t.*,d.name as deptName,j.name as jobName, l.name as leaderName from t_emp t LEFT JOIN t_dept d on t.deptId = d.id LEFT JOIN t_job j on t.jobId = j.id
+	LEFT JOIN t_leader l on t.leaderId = l.id
+    </select>
 </mapper>
