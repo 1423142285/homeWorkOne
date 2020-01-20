@@ -17,6 +17,7 @@ public class Temp {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date entryTime;
     private Integer deptId;
+    private Integer leaderId;
 
     public Integer getId() {
         return id;
@@ -64,5 +65,13 @@ public class Temp {
 
     public void setDeptId(Integer deptId) {
         this.deptId = deptId;
+    }
+
+    public Integer getLeaderId() {
+        return leaderId;
+    }
+
+    public void setLeaderId(Integer leaderId) {
+        this.leaderId = leaderId;
     }
 }

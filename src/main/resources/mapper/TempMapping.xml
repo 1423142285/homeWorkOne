@@ -11,4 +11,8 @@
         SELECT t.*,d.name as deptName,j.name as jobName, l.name as leaderName from t_emp t LEFT JOIN t_dept d on t.deptId = d.id LEFT JOIN t_job j on t.jobId = j.id
 	LEFT JOIN t_leader l on t.leaderId = l.id
     </select>
+    <select id="queryTempName" resultType="com.fh.entity.po.Temp">
+        SELECT * from t_emp t LEFT JOIN t_dept d on t.deptId = d.id
+	where d.id = #{deptId} and t.name = #{name}
+    </select>
 </mapper>
